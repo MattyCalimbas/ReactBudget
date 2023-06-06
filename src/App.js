@@ -1,3 +1,4 @@
+import React from 'react'
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       date: new Date(2023, 5, 12),
     },
   ];
+
   return (
     <div>
       <h2>Let's get started!</h2>
