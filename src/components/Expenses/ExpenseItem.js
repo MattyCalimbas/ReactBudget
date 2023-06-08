@@ -4,7 +4,9 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
-
+    // example of useState hook with array destructuring.  
+    // Returns an array of two elements.  
+    // First element is state value and second element is a function that alters state value. 
     const [title, setTitle] = useState(props.title);
     
     const clickHandler = () => {
