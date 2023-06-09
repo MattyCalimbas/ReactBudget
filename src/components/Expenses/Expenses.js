@@ -3,6 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 import './Expenses.css';
 import Card from '../UI/Card';
 
+// Using array destructuring to seperate props from props.expenses
 const Expenses = ({expenses}) => {
     return (
         <Card className="expenses">
