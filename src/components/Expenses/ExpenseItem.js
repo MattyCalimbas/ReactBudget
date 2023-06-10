@@ -15,6 +15,7 @@ const ExpenseItem = (props) => {
     };
 
     return (
+        // Sending expense-item class to Card component, can catch attributes with props object
         <Card className='expense-item'>
             <ExpenseDate date={props.date} />
             <div className='expense-item__description'>
