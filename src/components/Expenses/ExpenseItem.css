@@ -35,6 +35,7 @@
     border-radius: 12px;
   }
   
+  /* Mobile Media Query */
   @media (min-width: 580px) {
     .expense-item__description {
       flex-direction: row;
