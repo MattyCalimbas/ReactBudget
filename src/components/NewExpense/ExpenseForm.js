@@ -22,6 +22,7 @@ const ExpenseForm = () => {
     };
 
     const amountChangeHandler = (event) => {
+        // safest method to update state
         setUserInput((userInput) => {
             return { ...userInput, enteredAmount: event.target.value }
         })
