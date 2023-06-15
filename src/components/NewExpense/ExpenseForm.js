@@ -34,7 +34,7 @@ const ExpenseForm = () => {
     };
     const dateChangeHandler = (event) => {
         setDateInput(event.target.value)
-        
+
         // setUserInput((userInput) => {
         //     return { ...userInput, enteredDate: event.target.value }
         // })
@@ -42,6 +42,15 @@ const ExpenseForm = () => {
 
     const submitHandler = (event) => {
         event.preventDefault()
+
+        // expense data object
+        const expenseData = {
+            title: titleInput,
+            amount: amountInput,
+            date: new Date(dateInput)
+        }
+
+        console.log(expenseData)
         
     }
 
