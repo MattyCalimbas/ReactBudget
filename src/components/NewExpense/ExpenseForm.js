@@ -51,6 +51,12 @@ const ExpenseForm = () => {
         }
 
         console.log(expenseData)
+
+        // Taking advantage of two-way binding to clear inputs
+        // Using useState to reset the state of the inputs which will then reflect in the value attribute
+        setTitleInput('')
+        setAmountInput('')
+        setDateInput('')
         
     }
 
@@ -60,15 +66,18 @@ const ExpenseForm = () => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler} />
+
+                    {/* Two-way binding is achieved with value attribute */}
+                    {/* When state is changed, value of input element reflects change */}
+                    <input type="text" value={titleInput} onChange={titleChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="O.O1" step="0.01" onChange={amountChangeHandler} />
+                    <input type="number" min="O.O1" step="0.01" value={amountInput} onChange={amountChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="01-01-2023" max="12-31-2024" onChange={dateChangeHandler} />
+                    <input type="date" min="01-01-2023" max="12-31-2024" value={dateInput} onChange={dateChangeHandler} />
                 </div>
             </div>
             <div className="new-expense__action">
