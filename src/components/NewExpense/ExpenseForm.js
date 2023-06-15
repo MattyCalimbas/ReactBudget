@@ -2,39 +2,52 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    // Alternative method of setting state for multiple inputs
-    // const [titleInput, setTitleInput] = useState('');
-    // const [amountInput, setAmountInput] = useState('');
-    // const [dateInput, setDateInput] = useState('')
+    // Method of setting state for multiple inputs
+    const [titleInput, setTitleInput] = useState('');
+    const [amountInput, setAmountInput] = useState('');
+    const [dateInput, setDateInput] = useState('')
 
-    // Example of setting state with single state object
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    })
+    // Alternative example below of setting state with single state object
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: '',
+    //     enteredAmount: '',
+    //     enteredDate: ''
+    // })
 
     const titleChangeHandler = (event) => {
+        setTitleInput(event.target.value)
+
+        // Alternative example adhering to single state method above
+        // safest method to update state
         // takes snapshot of previous userInput state before updating ensuring latest state data is being used
-        setUserInput((userInput) => {
-            return { ...userInput, enteredTitle: event.target.value }
-        })
+        // setUserInput((userInput) => {
+        //     return { ...userInput, enteredTitle: event.target.value }
+        // })
     };
 
     const amountChangeHandler = (event) => {
-        // safest method to update state
-        setUserInput((userInput) => {
-            return { ...userInput, enteredAmount: event.target.value }
-        })
+        setAmountInput(event.target.value)
+
+        // setUserInput((userInput) => {
+        //     return { ...userInput, enteredAmount: event.target.value }
+        // })
     };
     const dateChangeHandler = (event) => {
-        setUserInput((userInput) => {
-            return { ...userInput, enteredDate: event.target.value }
-        })
+        setDateInput(event.target.value)
+        
+        // setUserInput((userInput) => {
+        //     return { ...userInput, enteredDate: event.target.value }
+        // })
     };
 
+    const submitHandler = (event) => {
+        event.preventDefault()
+        
+    }
+
     return (
-        <form>
+        // Listen to onSubmit on the form element to event listen over all the inputs
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
