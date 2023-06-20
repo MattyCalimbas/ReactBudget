@@ -69,6 +69,7 @@ const ExpenseForm = () => {
 
                     {/* Two-way binding is achieved with value attribute */}
                     {/* When state is changed, value of input element reflects change */}
+                    {/* Use two-way binding for forms */}
                     <input type="text" value={titleInput} onChange={titleChangeHandler} />
                 </div>
                 <div className="new-expense__control">
