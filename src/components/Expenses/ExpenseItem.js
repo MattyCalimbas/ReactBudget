@@ -5,6 +5,7 @@ import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
     // example of useState hook with array destructuring.  
+    // hooks can only be called directly within component functions
     // Returns an array of two elements.  
     // First element is state value and second element is a function that alters state value. 
     const [title, setTitle] = useState(props.title);
