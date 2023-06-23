@@ -12,7 +12,9 @@ const ExpenseItem = (props) => {
     
     const clickHandler = () => {
         setTitle('Updated!')
-        console.log('clicked!')
+        //console.log registeres first in console reflecting initial state.
+        //setTitle hook isn't called immediately but rather "scheduled"
+        console.log(title)
     };
 
     return (
