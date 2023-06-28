@@ -25,6 +25,7 @@ const ExpenseItem = (props) => {
                 <h2>{title}</h2>
                 <div className='expense-item__price'>${props.amount}</div>
             </div>
+            {/* onClick calls clickHandler; replaces addEventListener functionality */}
             <button onClick={clickHandler}>Change Title</button>
         </Card>
     )
