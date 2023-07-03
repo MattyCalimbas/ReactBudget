@@ -12,8 +12,10 @@ const ExpenseItem = (props) => {
     
     const clickHandler = () => {
         setTitle('Updated!')
-        //console.log registeres first in console reflecting initial state.
-        //setTitle hook isn't called immediately but rather "scheduled"
+        // console.log registeres first in console reflecting initial state.
+        // setTitle hook isn't called immediately but rather "scheduled"
+        // useState cycle: 1. register state with useState. Two values are returned, the value itself and the updating function. 2. Call updating function to change value 3. use first element to output state element.
+        // anytime state changes component reloads
         console.log(title)
     };
 
