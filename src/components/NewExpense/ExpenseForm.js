@@ -78,6 +78,7 @@ const ExpenseForm = () => {
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
+                    {/* onChange calls appropriate function and event delegation handles the rest */}
                     <input type="date" min="01-01-2023" max="12-31-2024" value={dateInput} onChange={dateChangeHandler} />
                 </div>
             </div>
