@@ -40,17 +40,17 @@ const ExpenseForm = () => {
         // })
     };
     
-    // use this function for all inputs/onChange events
+    // unified function for all inputs/onChange events
     // identifier is for differing inputs
-    const inputChangeHandler = (identifier, value) => {
-        if(identifier ==='title'){
-            setTitleInput(value)
-        } else if (identifer === 'date'){
-            setDateInput(value)
-        } else {
-            setAmountInput(value)
-        }
-    }
+    // const inputChangeHandler = (identifier, value) => {
+    //     if(identifier ==='title'){
+    //         setTitleInput(value)
+    //     } else if (identifer === 'date'){
+    //         setDateInput(value)
+    //     } else {
+    //         setAmountInput(value)
+    //     }
+    // }
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -82,22 +82,21 @@ const ExpenseForm = () => {
                     {/* Two-way binding is achieved with value attribute */}
                     {/* When state is changed, value of input element reflects change */}
                     {/* Use two-way binding for forms */}
-                    <input type="text" value={titleInput} onChange={()=>{
+                    <input type="text"  value={titleInput} onChange={titleChangeHandler} />
+
+                    {/* Input element using unified change listener */}
+                    {/* <input type="text" value={titleInput} onChange={()=>{
                         inputChangeHandler('title', event.target.value)
-                    }} />
+                    }} /> */}
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="O.O1" step="0.01" value={amountInput} onChange={()=>{
-                        inputChangeHandler('amount', event.target.value)
-                    }} />
+                    <input type="number" min="O.O1" step="0.01" value={amountInput} onChange={amountChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
                     {/* onChange calls appropriate function and event delegation handles the rest */}
-                    <input type="date" min="01-01-2023" max="12-31-2024" value={dateInput} onChange={()=>{
-                        inputChangeHandler('date', event.target.value)
-                    }} />
+                    <input type="date" min="01-01-2023" max="12-31-2024" value={dateInput} onChange={dateChangeHandler} />
                 </div>
             </div>
             <div className="new-expense__action">
