@@ -85,6 +85,7 @@ const ExpenseForm = () => {
                     <input type="text"  value={titleInput} onChange={titleChangeHandler} />
 
                     {/* Input element using unified change listener */}
+                    {/* inputChangeHandler takes two arguments, first differentiate each input and second argument holds targeted value  */}
                     {/* <input type="text" value={titleInput} onChange={()=>{
                         inputChangeHandler('title', event.target.value)
                     }} /> */}
