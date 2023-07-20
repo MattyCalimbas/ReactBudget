@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     // Method of setting state for multiple inputs
     const [titleInput, setTitleInput] = useState('');
     const [amountInput, setAmountInput] = useState('');
@@ -62,8 +62,9 @@ const ExpenseForm = () => {
             date: new Date(dateInput)
         }
 
-        console.log(expenseData)
-
+        // call custom prop with  data as passed argument to send it to the parent component
+        props.onSaveExpenseData(expenseData)
+        
         // Taking advantage of two-way binding to clear inputs
         // Using useState to reset the state of the inputs which will then reflect in the value attribute
         setTitleInput('')
