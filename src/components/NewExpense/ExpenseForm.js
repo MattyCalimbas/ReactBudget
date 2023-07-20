@@ -62,9 +62,9 @@ const ExpenseForm = (props) => {
             date: new Date(dateInput)
         }
 
-        // call custom prop with  data as passed argument to send it to the parent component
+        // call custom prop from parent component (NewExpense) with  data as passed argument to send it upward
         props.onSaveExpenseData(expenseData)
-        
+
         // Taking advantage of two-way binding to clear inputs
         // Using useState to reset the state of the inputs which will then reflect in the value attribute
         setTitleInput('')

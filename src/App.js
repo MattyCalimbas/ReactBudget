@@ -25,9 +25,17 @@ const App = () => {
     },
   ];
 
+  // most common pattern to pass props upward
+  // create custom prop and function on component that handles data being passed upward
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js')
+    console.log(expense)
+  }
+
   return (
     <div>
-      <NewExpense />
+      {/* use custom prop to call function that will handle data being sent upward from NewExpense */}
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );

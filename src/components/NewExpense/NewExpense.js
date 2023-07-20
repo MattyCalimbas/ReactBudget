@@ -3,7 +3,7 @@ import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
 
-const NewExpense = () => {
+const NewExpense = (props) => {
     // most common pattern to pass props upward
     // create custom prop and function on component that handles data being passed upward
     const onSaveExpenseDataHandler = (enteredExpenseData) => {
@@ -11,7 +11,9 @@ const NewExpense = () => {
             ...enteredExpenseData,
             id: Math.random().toString()
         };
-        console.log(expenseData)
+        
+        // call custom prop from parent component (App.js) and pass the data
+        props.onAddExpense(expenseData)
     };
 
     return (
