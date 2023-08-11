@@ -7,26 +7,28 @@ import ExpensesFilter from './ExpensesFilter';
 // Using array destructuring to seperate props from props.expenses
 const Expenses = ({ expenses }) => {
     const [filteredYear, setFilteredYear] = useState('2020');
-    const [filterInfoText, setFilterInfoText] = useState('2019, 2021, & 2022')
+    // Depricated function for setting up a state that is dependant on a value of another state variable
+    // const [filterInfoText, setFilterInfoText] = useState('2019, 2021 & 2022')
+
+    let filterInfoText = '2019,2021, & 2022'
 
     // Experiment: Derived State Feature
-    const filterChangeHandler = selectedYear => {
-        setFilteredYear(selectedYear)
-        if(selectedYear === '2019') {
-            setFilterInfoText('2020, 2021 & 2022')
-        } else if (selectedYear === '2020' ){
-            setFilterInfoText('2019, 2021 & 2022')
-        } else if (selectedYear === '2021'){
-            setFilterInfoText('2019, 2020 & 2022')
-        } else {
-            setFilterInfoText('2019, 2020 & 2021')
-        }
+    // State is depenedant upon filteredYear variable so rather than updating a seperate state variables, we simply compute the value of the filteredYear variable
+    if (filteredYear === '2019') {
+        filterInfoText = '2020, 2021 & 2022';
+    } else if (selectedYear === '2020') {
+        filterInfoText = '2019, 2021 & 2022';
+    } else if (selectedYear === '2021') {
+        filterInfoText = '2019, 2020 & 2022';
+    } else {
+        filterInfoText = '2019, 2020 & 2021';
     }
+
 
     return (
         <div>
             <Card className="expenses">
-                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
                 {/* Experiment: Derived State Feature */}
                 <p>Data for years {filterInfoText} is hidden.</p>
                 <ExpenseItem
