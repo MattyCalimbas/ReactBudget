@@ -33,15 +33,16 @@ const Expenses = ({ expenses }) => {
         return expense.date.getFullYear().toString() === filteredYear;
     })
 
-    console.log(filteredExpenses)
     return (
         <div>
             <Card className="expenses">
-                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
                 {/* Experiment: Derived State Feature */}
                 {/* <p>Data for years {filterInfoText} is hidden.</p> */}
+
+                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+                {/* Conditional content rendering: Ternary expression for years without data, condition to ? then logic for if condition is met, then a colon representing for the else case     */}
                 {/* Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'.  Any primitive value can be used as an ID*/}
-                {filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
+                {filteredExpenses.length === 0 ? <p> No Expenses Found </p> : filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
             </Card>
         </div>
     )
