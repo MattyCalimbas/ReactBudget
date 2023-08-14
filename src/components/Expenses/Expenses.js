@@ -28,14 +28,20 @@ const Expenses = ({ expenses }) => {
         setFilteredYear(selectedYear)
     }
 
+    // filter functions creates new array from call back function. filter returns true or false according to given parameter.  Any items that return true are kept in returned array
+    const filteredExpenses = expenses.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    })
+
+    console.log(filteredExpenses)
     return (
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
                 {/* Experiment: Derived State Feature */}
                 {/* <p>Data for years {filterInfoText} is hidden.</p> */}
-                {/* Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'  */}
-                {expenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
+                {/* Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'.  Any primitive value can be used as an ID*/}
+                {filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
             </Card>
         </div>
     )
