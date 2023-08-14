@@ -33,16 +33,30 @@ const Expenses = ({ expenses }) => {
         return expense.date.getFullYear().toString() === filteredYear;
     })
 
+    // Final Variation of Conditional Rendering: Function sits outside of return, hold JSX within variable(s) and call when appropriate
+    let expensesContent = <p> No expenses found.</p>;
+
+    if (filteredExpenses.length > 0) {
+        // Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'.  Any primitive value can be used as an ID
+        expensesContent = filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)
+    }
+
     return (
         <div>
             <Card className="expenses">
                 {/* Experiment: Derived State Feature */}
                 {/* <p>Data for years {filterInfoText} is hidden.</p> */}
 
-                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
                 {/* Conditional content rendering: Ternary expression for years without data, condition to ? then logic for if condition is met, then a colon representing for the else case     */}
-                {/* Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'.  Any primitive value can be used as an ID*/}
-                {filteredExpenses.length === 0 ? <p> No Expenses Found </p> : filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
+                {/* {filteredExpenses.length === 0 ? <p> No Expenses Found </p> : filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)} */}
+
+                {/* Restructure of Ternary conditional rendering; using AND operator instead. If first condition in front of AND operator is true, value after AND operator is returned */}
+                {/* {filteredExpenses.length === 0 && <p> No Expenses Found </p>}
+                {filteredExpenses.length > 0 && filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)} */}
+
+                <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+                {/* Variable holding conditional JSX content is called and rendered below */}
+                {expensesContent}
             </Card>
         </div>
     )
