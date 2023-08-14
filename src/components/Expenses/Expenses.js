@@ -34,7 +34,8 @@ const Expenses = ({ expenses }) => {
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
                 {/* Experiment: Derived State Feature */}
                 {/* <p>Data for years {filterInfoText} is hidden.</p> */}
-                {expenses.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} />)}
+                {/* Use key prop for React rendering using id.  If no ID, use second argument of map function 'id'  */}
+                {expenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)}
             </Card>
         </div>
     )
