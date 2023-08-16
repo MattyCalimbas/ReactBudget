@@ -18,8 +18,8 @@ const ExpensesChart = (props) => {
         {label: 'Dec', value: 0},
     ];
 
-    // for in loop that iterates over the attributes of a given Object, in this case props.expense and assigns the month to the appriopriate chart data point value
-    for (const expense in props.expense){
+    // for of loop that iterates over an array, in this case props.expense and assigns the month to the appriopriate chart data point value
+    for (const expense of props.expenses){
         const expenseMonth = expense.date.getMonth();
         chartDataPoints[expenseMonth].value += expense.amount;
     }

@@ -3,6 +3,7 @@ import ExpensesList from './ExpensesList';
 import './Expenses.css';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 
 // Using array destructuring to seperate props from props.expenses
 const Expenses = ({ expenses }) => {
@@ -52,6 +53,7 @@ const Expenses = ({ expenses }) => {
                 {/* {expensesContent} */}
 
                 {/* Refactor of expensesContent to new ExpenseList component */}
+                <ExpensesChart expenses={filteredExpenses} />
                 <ExpensesList items={filteredExpenses}/>
             </Card>
         </div>
