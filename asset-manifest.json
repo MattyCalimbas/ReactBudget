@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/reactbudget/static/css/main.05710c8e.css",
-    "main.js": "/reactbudget/static/js/main.dc2643e7.js",
-    "index.html": "/reactbudget/index.html",
-    "main.05710c8e.css.map": "/reactbudget/static/css/main.05710c8e.css.map",
-    "main.dc2643e7.js.map": "/reactbudget/static/js/main.dc2643e7.js.map"
+    "main.css": "/ReactBudget/static/css/main.05710c8e.css",
+    "main.js": "/ReactBudget/static/js/main.dc2643e7.js",
+    "index.html": "/ReactBudget/index.html",
+    "main.05710c8e.css.map": "/ReactBudget/static/css/main.05710c8e.css.map",
+    "main.dc2643e7.js.map": "/ReactBudget/static/js/main.dc2643e7.js.map"
   },
   "entrypoints": [
     "static/css/main.05710c8e.css",
