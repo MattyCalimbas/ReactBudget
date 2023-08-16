@@ -6,7 +6,6 @@ Welcome to the React Month-to-Month Budget Application! This application is desi
 - [Getting Started](#getting-started)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
