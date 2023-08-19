@@ -51,4 +51,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Thank you for using the React Month-to-Month Budget Application. We hope this tool helps you achieve your financial goals and manage your budget effectively. If you have any questions or encounter any issues, please don't hesitate to reach out to our support team. Happy budgeting! 📊💰
+Thank you for using the React Budget Application. We hope this tool helps you achieve your financial goals and manage your budget effectively. If you have any questions or encounter any issues, please don't hesitate to reach out to our support team. Happy budgeting! 📊💰
